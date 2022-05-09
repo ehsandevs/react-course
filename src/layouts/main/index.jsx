@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import ChatPanel from "./partials/ChatPanel";
 import MainFooter from "./partials/Footer";
 import MainHeader from "./partials/Header";
@@ -13,12 +12,7 @@ const MainLayout = ({ children }) => {
       <div className="page-wrap">
         <Sidebar />
         <div className="main-content">
-          <div className="container-fluid">
-            
-            <Link to={'/'}>Dashboard</Link>
-            <Link to={'/users'}>Users</Link>
-            
-            {children}</div>
+          <div className="container-fluid">{children}</div>
         </div>
 
         <RightSidebar />

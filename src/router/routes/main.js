@@ -1,22 +1,23 @@
-import Dashboard from "../../pages/dashboard";
-import Users from "../../pages/users";
+import UseContextHook from "../../pages/useContext";
+import UseEffectHook from "../../pages/useEffect";
+import UseReducerHook from "../../pages/useReducer";
 
 /**
  * @type {import("../../types/route").RoutesProps}
  */
 const routes = [
   {
-    path: "/",
-    element: <Dashboard />,
+    path: "/useReducer",
+    element: <UseReducerHook />,
   },
   {
-    path: "/users",
-    element: <Users />,
+    path: "/useEffect",
+    element: <UseEffectHook />,
   },
   {
-    path: "/sdf",
-    element: <h3>fdsgdfgzdf</h3>
-  }
+    path: "/useContext",
+    element: <UseContextHook />,
+  },
 ];
 
 export default routes;
