@@ -1,3 +1,4 @@
+import Login from "../../pages/login";
 import UseContextHook from "../../pages/useContext";
 import UseEffectHook from "../../pages/useEffect";
 import UseReducerHook from "../../pages/useReducer";
@@ -17,6 +18,10 @@ const routes = [
   {
     path: "/useContext",
     element: <UseContextHook />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ];
 
