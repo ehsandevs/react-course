@@ -12,25 +12,25 @@ const Login = () => {
   axios.defaults.headers.common["Accept"] = "application/json";
   axios.defaults.withCredentials = true;
 
-  const handleLogin = () => {
-    axios.get("http://localhost:8000/sanctum/csrf-cookie").then((res) => {
-      axios
-        .post("http://localhost:8000/api/login", { email, password })
-        .then((res) => {
-          // console.log(res.data.data.token);
+  /**
+   * @description Async
+   */
+  const handleLogin = async () => {
+    await axios.get("http://localhost:8000/sanctum/csrf-cookie");
 
-          localStorage.setItem("token", res.data.data.token);
-        })
-        .catch((err) => {});
+    const res = await axios.post("http://localhost:8000/api/login", {
+      email,
+      password,
     });
-    //
-    //
-    //
-    //
+
+    localStorage.setItem("token", res.data.data.token);
   };
 
-  localStorage.removeItem('token');
+  localStorage.removeItem("token");
 
+  /**
+   * @description Synce
+   */
   const getUser = () => {
     axios
       .get("http://localhost:8000/api/user", {
