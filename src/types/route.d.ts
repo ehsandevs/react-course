@@ -1,6 +1,6 @@
 type RouteProps = {
   path: string;
-  element: JSX.Element;
+  element: any;
 };
 
 type RoutesProps = RouteProps[];

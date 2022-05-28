@@ -1,16 +1,26 @@
 import MainLayout from "../layouts/main";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import routes from "./routes/main";
+import { Suspense } from "react";
+import { Spinner } from "reactstrap";
 
 const AppRoutes = () => {
   return (
     <>
       <MainLayout>
-        <Routes>
-          {routes?.map((route) => (
-            <Route {...route} />
-          ))}
-        </Routes>
+        <Suspense
+          fallback={
+            <div style={{ padding: "40px", textAlign: "center" }}>
+              <Spinner />
+            </div>
+          }
+        >
+          <Routes>
+            {routes?.map((route, index) => {
+              return <Route key={index} {...route} />;
+            })}
+          </Routes>
+        </Suspense>
       </MainLayout>
     </>
   );

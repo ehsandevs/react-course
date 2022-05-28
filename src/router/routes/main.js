@@ -1,7 +1,9 @@
-import Login from "../../pages/login";
-import UseContextHook from "../../pages/useContext";
-import UseEffectHook from "../../pages/useEffect";
-import UseReducerHook from "../../pages/useReducer";
+import { lazy } from "react";
+
+const UseReducer = lazy(() => import("../../pages/useReducer/index"));
+const UseEffect = lazy(() => import("../../pages/useEffect/index"));
+const UseContext = lazy(() => import("../../pages/useContext/index"));
+const Login = lazy(() => import("../../pages/login/index"));
 
 /**
  * @type {import("../../types/route").RoutesProps}
@@ -9,15 +11,15 @@ import UseReducerHook from "../../pages/useReducer";
 const routes = [
   {
     path: "/useReducer",
-    element: <UseReducerHook />,
+    element: <UseReducer />,
   },
   {
     path: "/useEffect",
-    element: <UseEffectHook />,
+    element: <UseEffect />,
   },
   {
     path: "/useContext",
-    element: <UseContextHook />,
+    element: <UseContext />,
   },
   {
     path: "/login",
