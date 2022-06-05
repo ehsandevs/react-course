@@ -14,6 +14,10 @@ const navigation = [
     title: "useContext",
     navLink: "/useContext",
   },
+  {
+    title: "customHook",
+    navLink: "/customHook",
+  },
 ];
 
 export default navigation;

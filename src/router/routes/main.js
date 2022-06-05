@@ -3,6 +3,7 @@ import { lazy } from "react";
 const UseReducer = lazy(() => import("../../pages/useReducer/index"));
 const UseEffect = lazy(() => import("../../pages/useEffect/index"));
 const UseContext = lazy(() => import("../../pages/useContext/index"));
+const CustomHook = lazy(() => import("../../pages/customHook/index"));
 const Login = lazy(() => import("../../pages/login/index"));
 
 /**
@@ -20,6 +21,10 @@ const routes = [
   {
     path: "/useContext",
     element: <UseContext />,
+  },
+  {
+    path: "/customHook",
+    element: <CustomHook />,
   },
   {
     path: "/login",
